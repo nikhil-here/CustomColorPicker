@@ -3,4 +3,4 @@ Custom Color Picker
 
 Demo Video
 ------------
-![demo] (demo.gif)
+![demo](demo.gif)
