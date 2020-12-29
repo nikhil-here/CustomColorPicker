@@ -2,7 +2,7 @@ Custom Color Picker
 =============================================
 
 
-## Create Drawables for your radio button
+Create Drawables for your radio button
 ``` xml
 <!-- color_picker_rb_bg.xml -->
 <?xml version="1.0" encoding="utf-8"?>
@@ -24,7 +24,7 @@ Custom Color Picker
 </shape>
 ```
 
-## Writing Java function for creating radio buttons
+Writing Java function for creating radio buttons
 ```java
     private void createColorPallete() {
        colorPallete = getResources().getStringArray(R.array.color_pallete);
@@ -53,7 +53,7 @@ Custom Color Picker
     }
 ```
 
-## Getting Selected Color By handling checkedChangedListener of radio group
+Getting Selected Color By handling checkedChangedListener of radio group
 
 ```java
     @Override
