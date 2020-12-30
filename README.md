@@ -26,10 +26,10 @@ Create Drawables for your radio button
 
 Writing Java function for creating radio buttons
 ```java
-    private void createColorPallete() {
-       colorPallete = getResources().getStringArray(R.array.color_pallete);
+    private void createColorPalette() {
+       colorPalette = getResources().getStringArray(R.array.color_palette);
 
-       for (int i = 0; i < colorPallete.length; i++)
+       for (int i = 0; i < colorPalette.length; i++)
        {
            //create radio button by inflating radio button layout
            LayoutInflater inflater = LayoutInflater.from(MainActivity.this);
@@ -45,7 +45,7 @@ Writing Java function for creating radio buttons
            rb.setLayoutParams(params);
 
            //set color from pallete
-           rb.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(colorPallete[i])));
+           rb.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(colorPalette[i])));
 
            //add view
            rgColorPicker.addView(rb);
@@ -63,11 +63,11 @@ Getting Selected Color By handling checkedChangedListener of radio group
         int selectedButtonId = radioGroup.getCheckedRadioButtonId();
 
         //id indicate position of color in array, getting selected color hash value
-        String selectedColor = colorPallete[i];
+        String selectedColor = colorPalette[i];
 
         //setting selected color hash value to textview and changing its color
         tvSelectedColor.setText("Selected Color : "+selectedColor);
-        tvSelectedColor.setTextColor(ColorStateList.valueOf(Color.parseColor(colorPallete[i])));
+        tvSelectedColor.setTextColor(ColorStateList.valueOf(Color.parseColor(colorPalette[i])));
     }
 ```
 

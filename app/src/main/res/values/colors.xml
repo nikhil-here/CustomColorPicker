@@ -10,7 +10,7 @@
 
 
     <!--  Color Pallete  -->
-    <string-array name="color_pallete">
+    <string-array name="color_palette">
         <item>#EF5350</item>
         <item>#43A047</item>
         <item>#00B8D4</item>

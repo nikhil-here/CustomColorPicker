@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -18,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
     private TextView tvSelectedColor;
     private RadioGroup rgColorPicker;
-    private String[] colorPallete;
+    private String[] colorPalette;
     public static final String TAG = "MainActivity";
 
     @Override
@@ -26,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
-        createColorPallete();
+        createColorPalette();
         initListeners();
     }
 
@@ -38,18 +37,18 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         int selectedButtonId = radioGroup.getCheckedRadioButtonId();
 
         //id indicate position of color in array, getting selected color hash value
-        String selectedColor = colorPallete[i];
+        String selectedColor = colorPalette[i];
 
         //setting selected color hash value to textview and changing its color
         tvSelectedColor.setText("Selected Color : "+selectedColor);
-        tvSelectedColor.setTextColor(ColorStateList.valueOf(Color.parseColor(colorPallete[i])));
+        tvSelectedColor.setTextColor(ColorStateList.valueOf(Color.parseColor(colorPalette[i])));
     }
 
 
-    private void createColorPallete() {
-       colorPallete = getResources().getStringArray(R.array.color_pallete);
+    private void createColorPalette() {
+       colorPalette = getResources().getStringArray(R.array.color_palette);
 
-       for (int i = 0; i < colorPallete.length; i++)
+       for (int i = 0; i < colorPalette.length; i++)
        {
            //create radio button by inflating radio button layout
            LayoutInflater inflater = LayoutInflater.from(MainActivity.this);
@@ -65,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
            rb.setLayoutParams(params);
 
            //set color from pallete
-           rb.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(colorPallete[i])));
+           rb.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(colorPalette[i])));
 
            //add view
            rgColorPicker.addView(rb);
